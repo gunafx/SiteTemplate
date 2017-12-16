@@ -63,7 +63,9 @@ $(document).ready(function () {
             }
         });
     };
-    menuShowHide();
+    if($(window).width() > 767) {
+        menuShowHide();
+    }
     $(window).on("scroll",function(e){
         menuShowHide();
     });
