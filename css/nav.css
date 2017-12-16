@@ -248,7 +248,7 @@
   transform: translateX(-45%) translateY(-10%) rotate(45deg);
 }
 .nav-header .nav-header-float .home-link {
-  display: none;
+  display: block;
   width: 6%;
   float: left;
   padding: 0 30px;
@@ -276,6 +276,7 @@
 }
 @media only screen and (min-width: 320px) and (max-width: 767px) {
   .nav-header .nav-header-float .home-link {
+    display: none;
     height: 46px;
   }
 }
