@@ -350,6 +350,9 @@
                     &.activelink {
                         @media @mobile {
                             font-family: 'open-sans-ExtraBold', sans-serif;
+                            &::after {
+                                transform: scale(0);
+                            }
                         }
                         &::after {
                             transform: scale(1,1);
