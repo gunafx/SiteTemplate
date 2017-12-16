@@ -26,7 +26,7 @@ $(document).ready(function () {
     });
     $('.popup-cta').click(function (e) {
         var elmObj = e.target,
-            popUpElm = $(elmObj).parents(".works-content-item").find('.work-popup').html();
+            popUpElm = $(elmObj).parents(".works-content-item").find('.work-popup').html().replace(/iframeDummy/g,"iframe");
 
         $('.global-popup-wrap').show();
         $('.global-popup').html("<div class='work-popup'>" + popUpElm + "</div>");
