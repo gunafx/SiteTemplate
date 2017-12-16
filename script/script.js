@@ -61,9 +61,9 @@ $(document).ready(function () {
                 $('.section-wrap').addClass('not-active');
                 $(v).removeClass("not-active");
             }
-        }); 
+        });
     };
-        menuShowHide();
+    menuShowHide();
     $(window).on("scroll",function(e){
         menuShowHide();
     });
