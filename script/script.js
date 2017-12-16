@@ -36,14 +36,7 @@ $(document).ready(function () {
 
     //scroll events - floading header & go-to-top button
     var menuShowHide = function() {
-        if(document.getElementById("profile").getBoundingClientRect().top < 20) {
-            $('.nav-header-inner').removeClass('nav-header-slider');
-            $('.nav-header-inner').addClass('nav-header-float');
-            
-            $('.nav-top-down').addClass('go-top');
-            $('.nav-top-down').removeClass('go-down');
-        } 
-        else if(document.getElementById("profile").getBoundingClientRect().top >= 20 && $('.nav-header-inner').hasClass('nav-header-float')){
+        if(document.getElementById("profile").getBoundingClientRect().top >= 20 && $('.nav-header-inner').hasClass('nav-header-float')){
             $('.nav-header-inner').removeClass('nav-header-float');
             $('.nav-header-inner').addClass('nav-header-slider');
             
