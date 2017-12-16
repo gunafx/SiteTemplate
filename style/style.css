@@ -1,0 +1,38 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    font-family: 'open-sans-regular', sans-serif;
+}
+h2 {
+    margin: 0 0 40px 0;
+    line-height: 80%;
+    font-size: 5em;
+    border-bottom: 1px solid;
+}
+q {
+    font-style: italic;
+    color: #444;
+}
+.content-wrap {
+    max-width: 1280px;
+    margin: 40px auto 100px auto;
+}
+
+.page-content {
+    
+}
+
+.profile-image {
+    float: right;
+    margin-left: 5%;
+    background-size: cover;
+    background: url(../img/dp.png) center;
+}
+.body-content {
+    padding: 0 20px;
+}
+
+.profile-content {
+    display: flex;
+}
