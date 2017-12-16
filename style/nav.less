@@ -346,13 +346,13 @@
                         height: 4px;
                         background-color: #75594d;
                         transition: transform 0.5s;
+                        @media @mobile {
+                            height: 0;
+                        }
                     }
                     &.activelink {
                         @media @mobile {
                             font-family: 'open-sans-ExtraBold', sans-serif;
-                            &::after {
-                                transform: scale(0);
-                            }
                         }
                         &::after {
                             transform: scale(1,1);
