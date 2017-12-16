@@ -248,7 +248,7 @@
   transform: translateX(-45%) translateY(-10%) rotate(45deg);
 }
 .nav-header .nav-header-float .home-link {
-  display: block;
+  display: none;
   width: 6%;
   float: left;
   padding: 0 30px;
