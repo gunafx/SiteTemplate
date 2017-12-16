@@ -118,7 +118,7 @@ $(document).ready(function () {
             $(elmStr).parent().append(navBtns);
             
             $('.slide-nav-btn').on("click",function(e){
-                var elmObj = $(e.target),
+                var elmObj = $(e.currentTarget),
                     position = parseInt(elmObj.data("position"),10);
                 
                 $('.slide-nav-btn').removeClass('active');
