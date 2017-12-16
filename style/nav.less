@@ -345,6 +345,9 @@
                         transition: transform 0.5s;
                     }
                     &.activelink {
+                        @media @mobile {
+                            font-family: 'open-sans-ExtraBold', sans-serif;
+                        }
                         &::after {
                             transform: scale(1,1);
                         }
@@ -384,7 +387,6 @@
                     transition: 0.5s;
                     visibility: visible;
                     transform: translateX(0%);
-                    font-family: 'open-sans-ExtraBold', sans-serif;
                     &::after {
                         display: none;
                     }

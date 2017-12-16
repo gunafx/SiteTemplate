@@ -104,6 +104,9 @@ iframe {
                 text-align: left;
             }
         }
+        @media @mobile {
+            padding: 10px;
+        }
     }
 }
 .body-content {
@@ -610,6 +613,17 @@ iframe {
                                 }
                             }
                         }
+                        
+                        @media @mobile {
+                            svg {
+                                transform: scale(3);
+                            }
+                            &:hover {
+                                svg {
+                                    transform: scale(4);
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -799,25 +813,24 @@ iframe {
                 margin-bottom: 15px;
                 text-align: center;
             }
-            .v-wrap {
-                width: 100%;
-                position: relative;
-                padding-bottom: 56%;
-                iframe {
-                    top: 0;
-                    left: 0;
-                    width: 100% !important;
-                    height: 100% !important;
-                    position: absolute;
-                }
-            }
         }
     }
     @media @mobile {
         overflow: scroll;
     }
 }
-
+.v-wrap {
+    width: 100%;
+    position: relative;
+    padding-bottom: 56%;
+    iframe {
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+        position: absolute;
+    }
+}
 .buy-link,.visit-link {
     display: inline-block;
     padding: 6px 30px;
