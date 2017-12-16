@@ -61,11 +61,9 @@ $(document).ready(function () {
                 $('.section-wrap').addClass('not-active');
                 $(v).removeClass("not-active");
             }
-        });
+        }); 
     };
-    if($(window).width() > 767) {
         menuShowHide();
-    }
     $(window).on("scroll",function(e){
         menuShowHide();
     });
