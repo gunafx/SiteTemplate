@@ -18,7 +18,7 @@ render();
 var scene = new THREE.Scene();
 
 var camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 0.1, 10000 );
-camera.position.set(-5,0,-10);
+camera.position.set(-3,0,-5);
 
 var renderer = new THREE.WebGLRenderer( { antialias: true } );
 renderer.setPixelRatio( window.devicePixelRatio );
@@ -51,6 +51,8 @@ controls.zoomSpeed = 0.5;
 
 controls.minDistance = 1;
 controls.maxDistance = 100;
+controls.autoRotate  = true;
+controls.autoRotateSpeed  = 0.05;
 
 controls.minPolarAngle = 0; // radians
 controls.maxPolarAngle = Math.PI /2; // radians
