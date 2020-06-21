@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>My first three.js app</title>
+		<style>
+			html { overflow: hidden; background: #fff; }
+			canvas { display: block; }
+		</style>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	</head>
+	<body>
+		<div class="container mt-5">
+			<h1>Gun GLTF - WebGL Test</h1>
+			<div id="webgl-container"></div>
+			<div class="mt-5">
+				<h3>Controls</h3>
+				<p>Zoom: Scroll up / Scroll Down</p>
+				<p>Rotate: Swipe / Click and drag</p>
+				<p>Move: Keyboard - UP/DOWN/RIGHT/LEFT arrows</p>
+			</div>
+		</div>
+		<script src="./js/three.js"></script>
+		<script src="./js/OrbitControls.js"></script>
+		<script src="./js/GLTFLoader.js"></script>
+		<script src="./index.js"></script>
+	</body>
+</html>
