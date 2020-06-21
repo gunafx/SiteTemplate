@@ -1,6 +1,7 @@
 ///////////////
-var width = window.innerWidth < 1200 ? window.innerWidth : window.innerWidth/2,
-height = window.innerHeight < 500 ? window.innerHeight : window.innerHeight/2;
+var mainContainer = document.getElementById('main-container');
+var width = mainContainer.offsetWidth,
+height = 500;
 const backgroundColor = '#eee';
 
 /*////////////////////////////////////////*/
@@ -17,7 +18,7 @@ render();
 var scene = new THREE.Scene();
 
 var camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 0.1, 10000 );
-camera.position.set(5,0,0);
+camera.position.set(-5,0,-10);
 
 var renderer = new THREE.WebGLRenderer( { antialias: true } );
 renderer.setPixelRatio( window.devicePixelRatio );
