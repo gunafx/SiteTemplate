@@ -17,8 +17,7 @@ render();
 
 var scene = new THREE.Scene();
 
-var camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 0.1, 10000 );
-camera.position.set(-3,0,-5);
+var camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 0.5, 10000 );
 
 var renderer = new THREE.WebGLRenderer( { antialias: true } );
 renderer.setPixelRatio( window.devicePixelRatio );
@@ -44,35 +43,45 @@ renderCalls.push(renderScene);
 
 /* ////////////////////////////////////////////////////////////////////////// */
 
-var controls = new THREE.OrbitControls( camera );
+var controls = new THREE.OrbitControls( camera, renderer.domElement );
+camera.position.set(93, 1.12, 113);
 
-controls.rotateSpeed = 0.2;
+controls.rotateSpeed = 0.07;
 controls.zoomSpeed = 0.5;
 
 controls.minDistance = 1;
-controls.maxDistance = 100;
+controls.maxDistance = 1000;
 controls.autoRotate  = true;
-controls.autoRotateSpeed  = 0.05;
+controls.autoRotateSpeed  = 0.03;
 
 controls.minPolarAngle = 0; // radians
 controls.maxPolarAngle = Math.PI /2; // radians
 
 controls.enableDamping = true;
-controls.dampingFactor = 0.05;
+controls.dampingFactor = 0.07;
 
 renderCalls.push(function(){
   controls.update()
 });
+function animate() {
 
+	requestAnimationFrame( animate );
+
+	// required if controls.enableDamping or controls.autoRotate are set to true
+	controls.update();
+
+	renderer.render( scene, camera );
+
+}
 
 /* ////////////////////////////////////////////////////////////////////////// */
 
 
-var light = new THREE.PointLight( 0xffffcc, 7, 50 );
-light.position.set(10 , 10, 10 );
-light.castShadow = true;            // default false
+// var light = new THREE.PointLight( 0xffffcc, 7, 50 );
+// light.position.set(10 , 10, 10 );
+// light.castShadow = true;            // default false
 
-scene.add( light );
+// scene.add( light );
 
 var light2 = new THREE.AmbientLight( 0x20202A, 7, 100 );
 light2.position.set( 30, -10, 30 );
@@ -84,36 +93,59 @@ light3.castShadow = true;
 scene.add( light3 );
 /* ////////////////////////////////////////////////////////////////////////// */
 
-
-// Instantiate a loader
-var loader = new THREE.GLTFLoader();
-
-// Load a glTF resource
+var loader = new THREE.ObjectLoader();
 loader.load(
 	// resource URL
-	'models/gun.gltf',
-	// called when the resource is loaded
-	function ( gltf ) {
+	"models/gun2/mp5k.json",
 
-		scene.add( gltf.scene );
-
-		gltf.animations; // Array<THREE.AnimationClip>
-		gltf.scene; // THREE.Group
-		gltf.scenes; // Array<THREE.Group>
-		gltf.cameras; // Array<THREE.Camera>
-		gltf.asset; // Object
-
+	// onLoad callback
+	// Here the loaded data is assumed to be an object
+	function ( obj ) {
+		// Add the loaded object to the scene
+		scene.add( obj );
 	},
-	// called while loading is progressing
+
+	// onProgress callback
 	function ( xhr ) {
-
-		console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
-
+		console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );
 	},
-	// called when loading has errors
-	function ( error ) {
 
-		console.log( 'An error happened' );
-
+	// onError callback
+	function ( err ) {
+		console.error( 'An error happened' );
 	}
 );
+// // Instantiate a loader
+// var loader = new THREE.GLTFLoader();
+
+// // Load a glTF resource
+// loader.load(
+// 	// resource URL
+// 	'models/mp5k.gltf',
+// 	// called when the resource is loaded
+// 	function ( gltf ) {
+
+// 		scene.add( gltf.scene );
+
+// 		gltf.animations; // Array<THREE.AnimationClip>
+// 		gltf.scene; // THREE.Group
+// 		gltf.scenes; // Array<THREE.Group>
+// 		gltf.cameras; // Array<THREE.Camera>
+// 		gltf.asset; // Object
+
+// 	},
+// 	// called while loading is progressing
+// 	function ( xhr ) {
+
+// 		console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+
+// 	},
+// 	// called when loading has errors
+// 	function ( error ) {
+
+// 		console.log( 'An error happened' );
+
+// 	}
+// );
+
+
